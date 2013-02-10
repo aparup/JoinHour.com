@@ -1013,7 +1013,7 @@ class InitiateActivityHandler(BaseHandler):
     def form(self):
         return forms.InitiateActvityForm(self)
 
-class StatHandler(BaseHandler):
+class LiveHandler(BaseHandler):
     """
     Handler for the Stat view, formerly the Leaderboard showing all active open activities and pasive interest broadcasts
     """
@@ -1047,7 +1047,7 @@ class StatHandler(BaseHandler):
 
         #JH: passing of params is not applicable for the variables with self.view.XXXXX - they get passed right on to .html via {{}}
         params = {}
-        return self.render_template('stat.html', **params)
+        return self.render_template('live.html', **params)
   
     def post(self):
         is_delete = self.request.POST.get('delete_item') 
